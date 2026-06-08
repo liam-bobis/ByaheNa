@@ -241,56 +241,7 @@ const DESTINATIONS = {
       semi_private:  { label: "Surfing Lesson + Island Hop Combo", price: 2000, desc: "1.5-hr beginner surf lesson + half-day island tour" },
       private:       { label: "Private Island Tour + Magpupungko Tidal Pools", price: 3500, desc: "Private boat, all 3 islands + rock pools visit" },
       premium_package: { label: "Surf + Lagoon + Stonefish + Mangrove Day", price: 5500, desc: "Full day with surf guide, mangrove paddle, private island access" }
-    },
-    entrance_fees: 100,
-    tips: [
-      { icon: "🏄", title: "Surfing at Cloud 9", text: "Cloud 9 is a hollow right-hander, best for intermediate-advanced surfers (Sep–Nov). Beginners should surf at Jacking Horse or Cemetery in General Luna — calmer and perfect for learning." },
-      { icon: "🛵", title: "Rent a Motorbike", text: "The best way to explore Siargao is renting a motorbike (₱400–₱600/day). Roads are flat and easy. A driver-guide costs ₱800–₱1,200/day for those who don't ride." },
-      { icon: "🌊", title: "Magpupungko Rock Pools", text: "Tidal pools that reveal crystal-clear saltwater during low tide. Visit in the morning (low tide 8–11 AM typically). ₱50 entrance, 45 min from General Luna." },
-      { icon: "🥥", title: "Sugba Lagoon", text: "A stunning emerald lagoon 1.5 hrs by boat from General Luna. Entry fee required (₱50). Go early — very crowded by midday." },
-      { icon: "🛖", title: "Stay in General Luna", text: "Most resorts, surf shops, restaurants, and nightlife are in GL. Staying here puts you within walking or tricycle distance of everything." },
-      { icon: "✈️", title: "Getting to Siargao", text: "Direct flights from Manila (Cebu Pacific), Cebu, and Davao to Sayak Airport (IAO). Airport is 30–45 min from GL by van (~₱200–₱350 shared)." }
-    ],
-    packing: {
-      essentials: ["Reef-safe sunscreen", "Motorbike license/permit (international preferred)", "Cash (few ATMs, and often out of money)", "Dry bag", "Reusable bag"],
-      gear: ["Surfboard (resorts have rentals)", "Reef shoes (rocky surf zones)", "Snorkel set", "Waterproof camera"],
-      clothing: ["Rash guard", "Board shorts × 3", "Casual wear for evenings", "Light jacket (rainy mornings common)"],
-      health: ["Antiseptic (reef cuts are common)", "Anti-itch cream (sand flies)", "Electrolytes", "Insect repellent"]
-    },
-    itinerary_template: [
-      {
-        title: "Arrival in Siargao",
-        subtitle: "Land, rent wheels, find your wave",
-        events: [
-          { time: "Morning",   icon: "✈️", name: "Fly to Sayak Airport (IAO)", desc: "Direct flights from Manila, Cebu, and Davao. Van transfer to General Luna (30–45 min, ₱200–350 shared).", cost_key: "transport" },
-          { time: "Midday",    icon: "🛵", name: "Rent a Motorbike", desc: "₱400–600/day from many shops in GL. Explore the main road to Cloud 9 (5 min away) and the coconut palm landscapes.", cost_key: "local" },
-          { time: "3:00 PM",   icon: "🏄", name: "First Surf Session", desc: "Beginners: head to Cemetery beach. Intermediate+: Cloud 9 boardwalk and nearby breaks.", cost_key: "activities" },
-          { time: "6:00 PM",   icon: "🌅", name: "Sunset at Cloud 9 Boardwalk", desc: "The walkway over the water is iconic. Watch surfers and catch the sunset — free and unforgettable." },
-          { time: "7:30 PM",   icon: "🍽️", name: "Dinner in General Luna", desc: "Kermit Resort's restaurant is the most popular (book ahead). Budget options: Harana Surf Resort cafe or local eateries.", cost_key: "food" }
-        ]
-      },
-      {
-        title: "Island Hopping Day",
-        subtitle: "Naked, Daku, and Guyam islands",
-        events: [
-          { time: "8:00 AM",  icon: "🚤", name: "Island Hopping Departs from GL", desc: "Classic 3-island tour: Naked Island (sandbar), Daku Island (lunch under coconut trees), Guyam Island (tiny island paradise).", cost_key: "activities" },
-          { time: "12:00 PM", icon: "🥥", name: "Lunch at Daku Island", desc: "Daku means 'big' — it has vendors selling fresh grilled fish, rice, and cold coconut. Eat under the shade of massive coconut palms." },
-          { time: "3:00 PM",  icon: "🌊", name: "Return & Sugba Lagoon (if time)", desc: "If your tour includes Sugba Lagoon, it's a must — emerald waters, jumping platforms, and kayak rentals." },
-          { time: "5:00 PM",  icon: "🛵", name: "Ride to Pacifico or Burgos", desc: "If staying longer, explore the less-visited north — Pacifico Beach and the Maasin River are less touristy." },
-          { time: "8:00 PM",  icon: "🎶", name: "Night Out in GL", desc: "Siargao has a surprisingly good bar scene: Jungle, Bravo, or low-key beers at Harana.", cost_key: "food" }
-        ]
-      },
-      {
-        title: "Surf & Departure",
-        subtitle: "Last waves, then the road home",
-        events: [
-          { time: "6:00 AM",  icon: "🏄", name: "Dawn Patrol Surf Session", desc: "Last surf before checkout. Early morning is when the waves are glassiest." },
-          { time: "9:00 AM",  icon: "☕", name: "Brunch in GL", desc: "Hang loose at any of the beachside cafes. Siargao has great specialty coffee now.", cost_key: "food" },
-          { time: "10:30 AM", icon: "🛍️", name: "Pasalubong & Checkout", desc: "Siargao shirts, local dried fish, and handmade jewelry from the night market.", cost_key: "shopping" },
-          { time: "12:00 PM", icon: "✈️", name: "Transfer to Sayak Airport", desc: "Book your van transfer at least a day ahead. 30–45 min to the airport.", cost_key: "transport" }
-        ]
-      }
-    ]
+    }
   },
 
   bohol: {
