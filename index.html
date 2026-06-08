@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ByaheNa — Philippine Vacation Cost Estimator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="components.css" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg">
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+      <div class="dots-pattern"></div>
+    </div>
+    <div class="hero-content">
+      <div class="logo-mark">
+        BN
+      </div>
+      <h1 class="hero-title">Byahe<em>Na</em></h1>
+      <p class="hero-sub">Philippine Vacation Cost Estimator</p>
+      <p class="hero-desc">Plan your dream getaway across the islands — from budget backpacker to luxury escape. Get real, accurate estimates based on your destination and travel style.</p>
+      <a href="#planner" class="cta-btn">Start Planning</a>
+    </div>
+    <div class="hero-islands">
+      <span class="island-chip">Boracay</span>
+      <span class="island-chip">Caramoan</span>
+      <span class="island-chip">Palawan</span>
+      <span class="island-chip">Siargao</span>
+      <span class="island-chip">Batanes</span>
+      <span class="island-chip">Bohol</span>
+    </div>
+  </header>
+
+  <!-- MAIN PLANNER -->
+  <main id="planner">
+
+    <!-- STEP 1: TRIP SETUP -->
+    <section class="section step-section" id="step1">
+      <div class="container">
+        <div class="step-badge">Step 1</div>
+        <h2 class="section-title">Where are you going?</h2>
+        <p class="section-desc">Tell us about your trip basics and we'll calculate everything for you.</p>
+
+        <div class="setup-grid">
+          <!-- Origin -->
+          <div class="form-group">
+            <label class="form-label">Departing From</label>
+            <select id="origin" class="form-select">
+              <optgroup label="Luzon">
+                <option value="manila">Metro Manila (NCR)</option>
+                <option value="naga" selected>Naga City, Camarines Sur</option>
+                <option value="legazpi">Legazpi City, Albay</option>
+                <option value="cebu_luzon">Lucena, Quezon</option>
+                <option value="baguio">Baguio City, Benguet</option>
+                <option value="san_fernando">San Fernando, Pampanga</option>
+                <option value="dagupan">Dagupan City, Pangasinan</option>
+                <option value="laoag">Laoag City, Ilocos Norte</option>
+                <option value="tuguegarao">Tuguegarao, Cagayan</option>
+              </optgroup>
+              <optgroup label="Visayas">
+                <option value="cebu">Cebu City</option>
+                <option value="iloilo">Iloilo City</option>
+                <option value="bacolod">Bacolod City</option>
+                <option value="tacloban">Tacloban City, Leyte</option>
+                <option value="dumaguete">Dumaguete City, Negros Oriental</option>
+                <option value="roxas">Roxas City, Capiz</option>
+              </optgroup>
+              <optgroup label="Mindanao">
+                <option value="davao">Davao City</option>
+                <option value="cagayan">Cagayan de Oro</option>
+                <option value="zamboanga">Zamboanga City</option>
+                <option value="general_santos">General Santos City</option>
+                <option value="butuan">Butuan City</option>
+                <option value="cotabato">Cotabato City</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- Destination -->
+          <div class="form-group">
+            <label class="form-label">Destination</label>
+            <select id="destination" class="form-select">
+              <optgroup label="Bicol Region">
+                <option value="caramoan">Caramoan, Camarines Sur</option>
+                <option value="calaguas">Calaguas Islands, Camarines Norte</option>
+              </optgroup>
+              <optgroup label="Luzon">
+                <option value="batanes">Batanes Islands</option>
+                <option value="sagada">Sagada, Mountain Province</option>
+                <option value="bataan_corregidor">Corregidor Island, Bataan</option>
+                <option value="puerto_galera">Puerto Galera, Oriental Mindoro</option>
+              </optgroup>
+              <optgroup label="Visayas">
+                <option value="boracay">Boracay, Aklan</option>
+                <option value="palawan">El Nido / Coron, Palawan</option>
+                <option value="cebu_kawasan">Kawasan Falls, Cebu</option>
+                <option value="bohol">Bohol (Chocolate Hills / Panglao)</option>
+                <option value="siargao">Siargao Island, Surigao del Norte</option>
+              </optgroup>
+              <optgroup label="Mindanao">
+                <option value="camiguin">Camiguin Island</option>
+                <option value="davao_samal">Samal Island, Davao</option>
+                <option value="zamboanga_great_santa_cruz">Great Santa Cruz, Zamboanga</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- Travelers -->
+          <div class="form-group">
+            <label class="form-label">Number of Travelers</label>
+            <div class="counter-input">
+              <button class="counter-btn" id="minus-travelers" type="button">−</button>
+              <span class="counter-val" id="travelers-count">2</span>
+              <button class="counter-btn" id="plus-travelers" type="button">+</button>
+            </div>
+            <span class="form-hint">Costs per person shown, total calculated below</span>
+          </div>
+
+          <!-- Duration -->
+          <div class="form-group duration-group">
+            <label class="form-label">Trip Duration</label>
+            <div class="duration-grid">
+              <div class="duration-card">
+                <div class="duration-label">Nights</div>
+                <div class="counter-input">
+                  <button class="counter-btn" id="minus-nights" type="button">−</button>
+                  <span class="counter-val" id="nights-count">3</span>
+                  <button class="counter-btn" id="plus-nights" type="button">+</button>
+                </div>
+              </div>
+              <div class="duration-card">
+                <div class="duration-label">Days</div>
+                <div class="counter-input">
+                  <button class="counter-btn" id="minus-days" type="button">−</button>
+                  <span class="counter-val" id="days-count">4</span>
+                  <button class="counter-btn" id="plus-days" type="button">+</button>
+                </div>
+              </div>
+            </div>
+            <span class="form-hint" id="duration-hint">Days should be at least nights + 1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2: TIER SELECTION -->
+    <section class="section tier-section" id="step2">
+      <div class="container">
+        <div class="step-badge">Step 2</div>
+        <h2 class="section-title">Choose Your Travel Style</h2>
+        <p class="section-desc">How do you like to travel? Pick the experience that fits your budget and vibe.</p>
+
+        <div class="tier-grid">
+          <div class="tier-card tier-budget" data-tier="budget" onclick="selectTier('budget')">
+            <div class="tier-icon"></div>
+            <div class="tier-badge">Budget</div>
+            <h3 class="tier-name">Backpacker</h3>
+            <p class="tier-desc">Hostels, local jeepneys, carinderia food. The authentic local experience without breaking the bank.</p>
+            <ul class="tier-features">
+              <li>Hostel or budget room</li>
+              <li>Shared bus, jeepney, or tricycle</li>
+              <li>Local carinderia meals</li>
+              <li>Group tour options</li>
+            </ul>
+            <div class="tier-range" id="budget-range">Loading...</div>
+          </div>
+
+          <div class="tier-card tier-mid tier-selected" data-tier="mid" onclick="selectTier('mid')">
+            <div class="tier-popular-badge">Most Popular</div>
+            <div class="tier-icon"></div>
+            <div class="tier-badge">Mid-Range</div>
+            <h3 class="tier-name">Comfort Traveler</h3>
+            <p class="tier-desc">Air-conditioned rooms, mixed transport, sit-down restaurants. The sweet spot of comfort and value.</p>
+            <ul class="tier-features">
+              <li>Standard hotel or inn</li>
+              <li>Budget airline and van transfer</li>
+              <li>Casual restaurant dining</li>
+              <li>Semi-private tours</li>
+            </ul>
+            <div class="tier-range" id="mid-range">Loading...</div>
+          </div>
+
+          <div class="tier-card tier-premium" data-tier="premium" onclick="selectTier('premium')">
+            <div class="tier-icon"></div>
+            <div class="tier-badge">Premium</div>
+            <h3 class="tier-name">Luxury Escape</h3>
+            <p class="tier-desc">Beachfront resorts, private boats, fine dining. An indulgent island experience with all the trimmings.</p>
+            <ul class="tier-features">
+              <li>Resort or premium hotel</li>
+              <li>Full-service airline and car hire</li>
+              <li>Fine dining and premium meals</li>
+              <li>Private tours and transfers</li>
+            </ul>
+            <div class="tier-range" id="premium-range">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINATION INFO STRIP -->
+    <section class="dest-info-strip" id="dest-info-strip">
+      <div class="container">
+        <div class="dest-info-inner" id="dest-info-inner">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: CUSTOMIZE -->
+    <section class="section customize-section" id="step3">
+      <div class="container">
+        <div class="step-badge">Step 3</div>
+        <h2 class="section-title">Customize Your Trip 🚢</h2>
+        <p class="section-desc">Toggle and fine-tune specific costs to match your plans.</p>
+
+        <div class="customize-grid">
+
+          <!-- Transport -->
+          <div class="cost-card" id="card-transport">
+            <div class="cost-card-header">
+              <div class="cost-icon-wrap"></div>
+              <div class="cost-card-info">
+                <h4 class="cost-card-title">🚍 Transportation</h4>
+                <p class="cost-card-sub" id="transport-sub">To & from destination</p>
+              </div>
+              <div class="cost-toggle-area">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-transport" checked onchange="updateEstimate()" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="cost-detail" id="transport-detail">
+              <select id="transport-mode" class="form-select small-select" onchange="updateEstimate()">
+                <option value="bus_van">Bus + Van hire</option>
+                <option value="budget_airline">Budget Airline (e.g. Cebu Pacific)</option>
+                <option value="full_airline">Full Service Airline</option>
+                <option value="private_car">Private Car Hire</option>
+                <option value="boat_ferry">Ferry / Pump Boat</option>
+              </select>
+              <div class="cost-amount" id="transport-amount">₱0</div>
+            </div>
+          </div>
+
+          <!-- Accommodation -->
+          <div class="cost-card" id="card-hotel">
+            <div class="cost-card-header">
+              <div class="cost-icon-wrap"></div>
+              <div class="cost-card-info">
+                <h4 class="cost-card-title">🏨 Accommodation</h4>
+                <p class="cost-card-sub" id="hotel-sub">Per night × nights</p>
+              </div>
+              <div class="cost-toggle-area">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-hotel" checked onchange="updateEstimate()" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="cost-detail" id="hotel-detail">
+              <select id="hotel-type" class="form-select small-select" onchange="updateEstimate()">
+                <option value="hostel">Hostel / Fan room</option>
+                <option value="inn">Budget Inn / Pension</option>
+                <option value="standard">Standard Hotel (3-star)</option>
+                <option value="resort">Beach Resort (4-star)</option>
+                <option value="luxury">Luxury Resort (5-star)</option>
+              </select>
+              <div class="cost-amount" id="hotel-amount">₱0</div>
+            </div>
+          </div>
+
+          <!-- Food -->
+          <div class="cost-card" id="card-food">
+            <div class="cost-card-header">
+              <div class="cost-icon-wrap"></div>
+              <div class="cost-card-info">
+                <h4 class="cost-card-title">🍽️ Food & Drinks</h4>
+                <p class="cost-card-sub">Per day × days</p>
+              </div>
+              <div class="cost-toggle-area">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-food" checked onchange="updateEstimate()" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="cost-detail" id="food-detail">
+              <select id="food-type" class="form-select small-select" onchange="updateEstimate()">
+                <option value="carinderia">Carinderia & street food</option>
+                <option value="casual">Casual restaurants</option>
+                <option value="midrange">Mid-range dining</option>
+                <option value="finedining">Fine dining & cocktails</option>
+              </select>
+              <div class="cost-amount" id="food-amount">₱0</div>
+            </div>
+          </div>
+
+          <!-- Activities -->
+          <div class="cost-card" id="card-activities">
+            <div class="cost-card-header">
+              <div class="cost-icon-wrap"></div>
+              <div class="cost-card-info">
+                <h4 class="cost-card-title">🌴 Activities & Tours</h4>
+                <p class="cost-card-sub" id="activities-sub">Island hopping, tours, etc.</p>
+              </div>
+              <div class="cost-toggle-area">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-activities" checked onchange="updateEstimate()" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="cost-detail" id="activities-detail">
+              <select id="activity-type" class="form-select small-select" onchange="updateEstimate()">
+                <option value="group">Group island hopping tour</option>
+                <option value="semi_private">Semi-private tour</option>
+                <option value="private">Private boat / Full-day tour</option>
+                <option value="premium_package">Premium package + extras</option>
+              </select>
+              <div class="cost-amount" id="activities-amount">₱0</div>
+            </div>
+          </div>
+
+          <!-- Local Transport -->
+          <div class="cost-card" id="card-local">
+            <div class="cost-card-header">
+              <div class="cost-icon-wrap"></div>
+              <div class="cost-card-info">
+                <h4 class="cost-card-title">🚕 Local Getting Around</h4>
+                <p class="cost-card-sub">Tricycles, e-bikes, habal-habal</p>
+              </div>
+              <div class="cost-toggle-area">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-local" checked onchange="updateEstimate()" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="cost-detail" id="local-detail">
+              <select id="local-type" class="form-select small-select" onchange="updateEstimate()">
+                <option value="tricycle">Tricycle / Habal-habal</option>
+                <option value="rent_bike">Rent motorbike / E-bike</option>
+                <option value="grab">Grab / Taxi</option>
+                <option value="private_driver">Private driver for the day</option>
+              </select>
+              <div class="cost-amount" id="local-amount">₱0</div>
+            </div>
+          </div>
+
+          <!-- Shopping & Pasalubong -->
+          <div class="cost-card" id="card-shopping">
+            <div class="cost-card-header">
+              <div class="cost-icon-wrap"></div>
+              <div class="cost-card-info">
+                <h4 class="cost-card-title">🛍️ Shopping & Pasalubong</h4>
+                <p class="cost-card-sub">Souvenirs, ukay, local products</p>
+              </div>
+              <div class="cost-toggle-area">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-shopping" checked onchange="updateEstimate()" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="cost-detail" id="shopping-detail">
+              <select id="shopping-type" class="form-select small-select" onchange="updateEstimate()">
+                <option value="minimal">Minimal (pasalubong only)</option>
+                <option value="moderate">Moderate shopping</option>
+                <option value="heavy">Heavy shopping</option>
+              </select>
+              <div class="cost-amount" id="shopping-amount">₱0</div>
+            </div>
+          </div>
+
+          <!-- Contingency -->
+          <div class="cost-card" id="card-contingency">
+            <div class="cost-card-header">
+              <div class="cost-icon-wrap"></div>
+              <div class="cost-card-info">
+                <h4 class="cost-card-title">⚠️ Emergency / Contingency</h4>
+                <p class="cost-card-sub">10% buffer recommended</p>
+              </div>
+              <div class="cost-toggle-area">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-contingency" checked onchange="updateEstimate()" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="cost-detail" id="contingency-detail">
+              <select id="contingency-pct" class="form-select small-select" onchange="updateEstimate()">
+                <option value="0.05">5% buffer</option>
+                <option value="0.10" selected>10% buffer (recommended)</option>
+                <option value="0.15">15% buffer</option>
+                <option value="0.20">20% buffer</option>
+              </select>
+              <div class="cost-amount" id="contingency-amount">₱0</div>
+            </div>
+          </div>
+
+        </div><!-- end customize-grid -->
+      </div>
+    </section>
+
+    <!-- RESULTS PANEL -->
+    <section class="section results-section" id="results">
+      <div class="container">
+        <div class="step-badge">Your Estimate</div>
+        <h2 class="section-title">Cost Breakdown</h2>
+
+        <div class="results-layout">
+
+          <!-- Summary Cards -->
+          <div class="summary-cards">
+            <div class="summary-card per-person">
+              <div class="summary-label">Per Person</div>
+              <div class="summary-amount" id="per-person-total">₱0</div>
+              <div class="summary-sub" id="per-person-sub">for 3 nights / 4 days</div>
+            </div>
+            <div class="summary-card total-cost">
+              <div class="summary-label">Total Trip Cost</div>
+              <div class="summary-amount" id="grand-total">₱0</div>
+              <div class="summary-sub" id="grand-total-sub">for 2 travelers</div>
+            </div>
+            <div class="summary-card per-day">
+              <div class="summary-label">Per Person / Day</div>
+              <div class="summary-amount" id="per-day-total">₱0</div>
+              <div class="summary-sub">average daily spend</div>
+            </div>
+          </div>
+
+          <div class="compare-panel">
+            <div class="compare-panel-top">
+              <div>
+                <h3 class="compare-panel-title">Compare Destinations</h3>
+                <p class="compare-panel-desc">Compare this destination with another popular Philippine spot and see how budget, average, and premium experiences stack up.</p>
+              </div>
+              <div class="compare-select-row">
+                <label for="compare-destination">Compare with</label>
+                <select id="compare-destination" class="form-select" onchange="updateCompareSection()">
+                  <option value="boracay">Boracay</option>
+                  <option value="palawan">El Nido / Coron</option>
+                  <option value="siargao">Siargao Island</option>
+                  <option value="bohol">Bohol</option>
+                  <option value="batanes">Batanes</option>
+                  <option value="sagada">Sagada</option>
+                  <option value="camiguin">Camiguin</option>
+                  <option value="puerto_galera">Puerto Galera</option>
+                  <option value="cebu_kawasan">Kawasan Falls</option>
+                  <option value="calaguas">Calaguas Islands</option>
+                  <option value="davao_samal">Samal Island</option>
+                  <option value="zamboanga_great_santa_cruz">Great Santa Cruz</option>
+                  <option value="bataan_corregidor">Corregidor Island</option>
+                </select>
+              </div>
+            </div>
+            <div class="compare-table-wrap">
+              <table class="compare-table">
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th id="compare-current-title">Current destination</th>
+                    <th id="compare-other-title">Other destination</th>
+                  </tr>
+                </thead>
+                <tbody id="compare-table-body">
+                </tbody>
+              </table>
+            </div>
+            <div class="compare-summary" id="compare-summary"></div>
+          </div>
+
+          <div class="budget-table-card">
+            <h3 class="budget-title">Experience Categories</h3>
+            <p class="budget-desc">Estimate cheaper, average, and more premium versions of this trip based on your selected traveler count, nights, and origin.</p>
+            <div class="budget-table-wrap">
+              <table class="budget-table">
+                <thead>
+                  <tr>
+                    <th>Experience</th>
+                    <th>Per Person</th>
+                    <th>Total Trip</th>
+                  </tr>
+                </thead>
+                <tbody id="budget-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Chart + Breakdown -->
+          <div class="breakdown-area">
+            <div class="breakdown-chart-wrap">
+              <canvas id="breakdown-chart" width="300" height="300"></canvas>
+              <div class="breakdown-chart-info">
+                <div class="breakdown-chart-title">Per person cost</div>
+                <div class="breakdown-chart-value" id="breakdown-chart-value">₱0</div>
+                <div class="breakdown-chart-note">Your estimated share for this trip</div>
+              </div>
+            </div>
+            <div class="breakdown-list" id="breakdown-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tier Comparison -->
+        <div class="tier-comparison" id="tier-comparison">
+          <h3 class="comparison-title">Tier Comparison for This Trip</h3>
+          <div class="comparison-bars" id="comparison-bars">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ITINERARY SECTION -->
+    <section class="section itinerary-section" id="itinerary">
+      <div class="container">
+        <div class="step-badge">Sample Itinerary</div>
+        <h2 class="section-title" id="itinerary-title">Your Trip to <span id="dest-name">Caramoan</span></h2>
+        <p class="section-desc" id="itinerary-desc">A generalized itinerary based on your trip settings. Actual times may vary.</p>
+
+        <div class="itinerary-tabs">
+          <button class="itinerary-tab active" onclick="switchItinerary(this, 'itinerary-days')" id="tab-itinerary">Day-by-Day</button>
+          <button class="itinerary-tab" onclick="switchItinerary(this, 'tips-content')" id="tab-tips">Local Tips</button>
+          <button class="itinerary-tab" onclick="switchItinerary(this, 'packing-content')" id="tab-packing">What to Pack</button>
+        </div>
+
+        <!-- Day-by-Day -->
+        <div class="itinerary-content active" id="itinerary-days">
+          <div id="day-cards">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Local Tips -->
+        <div class="itinerary-content" id="tips-content">
+          <div class="tips-grid" id="tips-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Packing -->
+        <div class="itinerary-content" id="packing-content">
+          <div class="packing-grid" id="packing-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section class="disclaimer-section">
+      <div class="container">
+        <div class="disclaimer-box">
+          <span class="disclaimer-icon"></span>
+          <div class="disclaimer-text">
+            <strong>About These Estimates:</strong> All prices are in Philippine Pesos (PHP) and are approximate as of 2024–2025. Actual costs vary depending on season, availability, group size, and personal spending habits. Airline fares fluctuate significantly — book early for the best deals. Always add a personal contingency fund for unexpected expenses.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAVINGS PLANNER CTA STRIP -->
+    <section class="savings-cta-strip">
+      <div class="container">
+        <div class="savings-cta-inner">
+          <div class="savings-cta-text">
+            <span class="savings-cta-icon"></span>
+            <div>
+              <div class="savings-cta-title">Ready to start saving?</div>
+              <div class="savings-cta-sub">Find out exactly how much to set aside every month to make this trip happen.</div>
+            </div>
+          </div>
+          <button class="savings-cta-btn" onclick="openSavingsPlanner()">
+            Open Savings Planner ↗
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">⛵ ByaheNa</div>
+        <p class="footer-tagline">Maglakbay tayo! (Let's travel!)</p>
+        <p class="footer-note">Built for Filipino travelers. Estimates based on 2024–2025 market data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="nav.js"></script>
+  <script src="savings.js"></script>
+  <script src="export.js"></script>
+</body>
+</html>

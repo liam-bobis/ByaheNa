@@ -1,0 +1,202 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "currency": "PHP",
+    "last_updated": "2025-01",
+    "notes": "All prices in Philippine Pesos. Transport = round trip per person. Hotel = per room per night (2 sharing). Food/Local = per person per day.",
+    "update_instructions": "Edit values here OR use Google Sheets integration (see sheets-integration-guide.md)"
+  },
+
+  "transport": {
+    "naga": {
+      "caramoan":    { "bus_van": 360,  "private_car": 2000, "note": "RHK Van: Naga→Caramoan ~2.5hrs (₱180/way)" },
+      "calaguas":    { "bus_van": 650,  "boat_ferry": 600,   "note": "Bus Naga→Daet + Van to port + bangka" },
+      "boracay":     { "budget_airline": 5200, "full_airline": 8000, "note": "Via Manila connection. No direct from Naga." },
+      "palawan":     { "budget_airline": 6500, "full_airline": 9500, "note": "Via Manila to PPS/ENI" },
+      "siargao":     { "budget_airline": 6800, "full_airline": 10000, "note": "Via Manila connecting flight" },
+      "bohol":       { "budget_airline": 6000, "full_airline": 9000,  "note": "Via Manila or Cebu→Tagbilaran" },
+      "batanes":     { "budget_airline": 12000, "full_airline": 17000, "note": "Very expensive from Naga — via Manila" },
+      "sagada":      { "bus_van": 1800, "private_car": 8000, "note": "Bus Naga→Manila then Dangwa→Sagada overnight" },
+      "camiguin":    { "budget_airline": 7000, "full_airline": 10500, "note": "Via Manila or Cebu then CdO ferry" },
+      "puerto_galera": { "bus_van": 1500, "boat_ferry": 700, "note": "Bus Naga→Manila then Batangas ferry" },
+      "cebu_kawasan": { "budget_airline": 5800, "full_airline": 8500, "note": "Via Manila or direct seasonal" },
+      "davao_samal": { "budget_airline": 7500, "full_airline": 11000, "note": "Via Manila→Davao" }
+    },
+    "manila": {
+      "caramoan":    { "bus_van": 900,  "budget_airline": 2800, "full_airline": 4500, "private_car": 7000, "note": "Bus to Naga (~8hr) + Van to Caramoan (~2.5hr)" },
+      "calaguas":    { "bus_van": 800,  "boat_ferry": 600,  "private_car": 6000, "note": "Bus to Daet + van to port + bangka" },
+      "boracay":     { "budget_airline": 3200, "full_airline": 5500, "note": "Fly to Caticlan or Kalibo + van" },
+      "palawan":     { "budget_airline": 3500, "full_airline": 6000, "note": "Fly to Puerto Princesa (PPS) or El Nido (ENI)" },
+      "siargao":     { "budget_airline": 4500, "full_airline": 7000, "note": "Fly to Sayak Airport (IAO)" },
+      "bohol":       { "budget_airline": 3800, "full_airline": 5800, "boat_ferry": 1200, "note": "Fly to BPH or ferry via Cebu" },
+      "batanes":     { "budget_airline": 9000, "full_airline": 14000, "note": "Fly to Basco (BSO) — very limited seats" },
+      "sagada":      { "bus_van": 1200, "private_car": 5000, "note": "Overnight bus from Cubao/Dangwa (~10hrs)" },
+      "camiguin":    { "budget_airline": 4200, "full_airline": 6500, "note": "Fly to Cebu or CdO + ferry to Camiguin" },
+      "puerto_galera": { "bus_van": 700, "boat_ferry": 700, "private_car": 4500, "note": "Bus to Batangas + ferry (total ~4hrs)" },
+      "cebu_kawasan": { "budget_airline": 3200, "full_airline": 5000, "note": "Fly to Cebu then habal-habal" },
+      "davao_samal": { "budget_airline": 4500, "full_airline": 7000, "note": "Fly to Davao then ferry to Samal" }
+    },
+    "cebu": {
+      "boracay":     { "budget_airline": 3000, "full_airline": 5000, "boat_ferry": 1200, "note": "Fly to Caticlan or ferry via Iloilo" },
+      "palawan":     { "budget_airline": 3500, "full_airline": 5500, "note": "Fly Cebu→Puerto Princesa (direct)" },
+      "siargao":     { "budget_airline": 3200, "full_airline": 5000, "note": "Fly Cebu→Siargao (direct, ~1hr)" },
+      "bohol":       { "bus_van": 700,  "boat_ferry": 700,  "budget_airline": 2500, "full_airline": 4000, "note": "Ferry from Cebu City: 2hrs (OceanJet)" },
+      "camiguin":    { "budget_airline": 3200, "full_airline": 5000, "note": "Fly Cebu→Camiguin or via CdO ferry" },
+      "caramoan":    { "budget_airline": 4500, "full_airline": 7000, "note": "Via Manila connection" },
+      "cebu_kawasan": { "bus_van": 300, "boat_ferry": 400, "private_car": 1500, "note": "Bus/van from Cebu City + habal-habal" },
+      "davao_samal": { "budget_airline": 3500, "full_airline": 5500, "note": "Fly Cebu→Davao then ferry" },
+      "batanes":     { "budget_airline": 9500, "full_airline": 14000, "note": "Via Manila" },
+      "zamboanga_great_santa_cruz": { "budget_airline": 3800, "full_airline": 6000, "note": "Fly Cebu→Zamboanga (direct)" }
+    },
+    "davao": {
+      "davao_samal": { "bus_van": 300, "boat_ferry": 300, "private_car": 1500, "note": "Short ferry from Davao port" },
+      "camiguin":    { "bus_van": 2000, "budget_airline": 4500, "full_airline": 7000, "note": "Bus to CdO then Balingoan port + ferry" },
+      "boracay":     { "budget_airline": 4500, "full_airline": 7000, "note": "Via Cebu or Manila" },
+      "siargao":     { "budget_airline": 4500, "full_airline": 7000, "note": "Via Cebu or Manila" },
+      "palawan":     { "budget_airline": 4200, "full_airline": 6500, "note": "Direct some days via Cebu Pacific" },
+      "batanes":     { "budget_airline": 11000, "full_airline": 16000, "note": "Via Manila — very expensive" },
+      "cebu_kawasan": { "budget_airline": 3800, "full_airline": 6000, "note": "Fly Davao→Cebu then bus" },
+      "caramoan":    { "budget_airline": 5500, "full_airline": 8500, "note": "Via Manila" }
+    },
+    "iloilo": {
+      "boracay":     { "bus_van": 800, "boat_ferry": 800, "budget_airline": 2500, "full_airline": 4000, "note": "FastCraft Iloilo→Caticlan: 2hrs (cheapest route!)" },
+      "palawan":     { "budget_airline": 3800, "full_airline": 6000, "note": "Fly Iloilo→Manila→Palawan or direct" },
+      "siargao":     { "budget_airline": 4000, "full_airline": 6500, "note": "Via Cebu or Manila" },
+      "bohol":       { "budget_airline": 3500, "full_airline": 5500, "note": "Ferry or fly via Cebu" },
+      "cebu_kawasan": { "budget_airline": 3000, "full_airline": 4800, "note": "Fly or ferry to Cebu then bus" },
+      "caramoan":    { "budget_airline": 4500, "full_airline": 7000, "note": "Via Manila" },
+      "batanes":     { "budget_airline": 10000, "full_airline": 15000, "note": "Via Manila" }
+    }
+  },
+
+  "hotel_rates": {
+    "budget_friendly": {
+      "hostel":   { "price": 400,  "desc": "Dorm bed / Fan room, shared bathroom" },
+      "inn":      { "price": 800,  "desc": "Simple fan room, private bathroom" },
+      "standard": { "price": 1800, "desc": "Air-con room, private bath, basic amenities" },
+      "resort":   { "price": 3500, "desc": "Beach resort, air-con, breakfast sometimes included" },
+      "luxury":   { "price": 6000, "desc": "Premium resort, full amenities" }
+    },
+    "mid_friendly": {
+      "hostel":   { "price": 500,  "desc": "Private room or dorm, fan/aircon" },
+      "inn":      { "price": 1200, "desc": "Pension house / budget inn, air-con" },
+      "standard": { "price": 2500, "desc": "3-star hotel, breakfast optional" },
+      "resort":   { "price": 5000, "desc": "Beach resort, pool, A/C" },
+      "luxury":   { "price": 10000,"desc": "4-5 star beachfront resort" }
+    },
+    "premium_friendly": {
+      "hostel":   { "price": 700,  "desc": "Hostel / budget guesthouse, fan" },
+      "inn":      { "price": 1500, "desc": "Pension / budget inn" },
+      "standard": { "price": 3500, "desc": "Standard hotel, A/C, breakfast" },
+      "resort":   { "price": 8000, "desc": "4-star beachfront resort, pool" },
+      "luxury":   { "price": 20000,"desc": "5-star resort / private island" }
+    }
+  },
+
+  "food_budgets": {
+    "carinderia":  { "price": 350,  "desc": "Carinderia, turo-turo, street food. 3 meals + snacks." },
+    "casual":      { "price": 700,  "desc": "Casual sit-down restaurants. Mix of Filipino and fastfood." },
+    "midrange":    { "price": 1200, "desc": "Mid-range restaurants. Proper 3 meals. Coffee included." },
+    "finedining":  { "price": 2500, "desc": "Fine dining, cocktails, room service." }
+  },
+
+  "activity_prices": {
+    "caramoan": {
+      "group":           { "price": 800,  "label": "Group Island-Hopping Tour (shared bangka)", "desc": "4–5 island stops" },
+      "semi_private":    { "price": 1500, "label": "Semi-Private Boat Tour (4–6 pax)", "desc": "Dedicated boat, guide" },
+      "private":         { "price": 2800, "label": "Private Bangka + Full-Day Tour", "desc": "Private boat, flexible itinerary" },
+      "premium_package": { "price": 4500, "label": "Premium Island Package + Kayak", "desc": "Private boat, kayak, lunch, snorkeling" }
+    },
+    "boracay": {
+      "group":           { "price": 800,  "label": "Group Paraw Sailing (sunset sail)", "desc": "~1 hour sunset cruise" },
+      "semi_private":    { "price": 2500, "label": "Water Sports Package (3–4 activities)", "desc": "Parasailing, banana boat, helmet dive" },
+      "private":         { "price": 3500, "label": "Private Island Tour + Cliff Jumping", "desc": "Crocodile Island, Puka, Bat Cave" },
+      "premium_package": { "price": 6000, "label": "Helmet Dive + Parasailing + Private Paraw", "desc": "Best of Boracay water activities" }
+    },
+    "palawan": {
+      "group":           { "price": 1200, "label": "Tour A, B, C, or D (group boat)", "desc": "Lagoons, beaches, snorkeling" },
+      "semi_private":    { "price": 2500, "label": "Semi-Private Palawan Tour (4–6 pax)", "desc": "More flexibility, 5–7 stops" },
+      "private":         { "price": 5500, "label": "Private Boat Full-Day Tour", "desc": "Charter a bangka for the whole day" },
+      "premium_package": { "price": 8500, "label": "Premium Lagoon + Kayak + Snorkel Package", "desc": "Restricted lagoons, guides, lunch" }
+    },
+    "siargao": {
+      "group":           { "price": 700,  "label": "3-Island Group Tour (Naked, Daku, Guyam)", "desc": "Classic Siargao island hop" },
+      "semi_private":    { "price": 2000, "label": "Surfing Lesson + Island Hop Combo", "desc": "1.5-hr beginner surf + half-day tour" },
+      "private":         { "price": 3500, "label": "Private Island Tour + Magpupungko", "desc": "Private boat, tidal pools visit" },
+      "premium_package": { "price": 5500, "label": "Surf + Lagoon + Stonefish + Mangrove Day", "desc": "Full day with surf guide, private access" }
+    },
+    "bohol": {
+      "group":           { "price": 1200, "label": "Bohol Group Land Tour (van + guide)", "desc": "Chocolate Hills, tarsier, Loboc River" },
+      "semi_private":    { "price": 2500, "label": "Island Hopping + Land Tour Combo", "desc": "Balicasag + full land tour" },
+      "private":         { "price": 4000, "label": "Private Car Tour + Firefly Watching", "desc": "Full-day private van tour + evening cruise" },
+      "premium_package": { "price": 7500, "label": "Exclusive Safari + Whale Shark + Highlights", "desc": "All-in premium package" }
+    },
+    "batanes": {
+      "group":           { "price": 1500, "label": "Batan Island Group Tour (tricycle)", "desc": "Batan, Sabtang, North Batan road tour" },
+      "semi_private":    { "price": 2500, "label": "Sabtang Island Day Tour", "desc": "Faluwa ride, stone villages, Morong Beach" },
+      "private":         { "price": 4500, "label": "Private 2-Island Tour", "desc": "Batan + Sabtang, flexible pace" },
+      "premium_package": { "price": 9000, "label": "Multi-Island Full Package + Itbayat", "desc": "Rare 3-island tour including Itbayat" }
+    },
+    "sagada": {
+      "group":           { "price": 800,  "label": "Sagada Group Walking Tour", "desc": "Hanging Coffins, Echo Valley, cave tour" },
+      "semi_private":    { "price": 1500, "label": "Small Group Cave + Heritage Tour", "desc": "Cave spelunking + Kiltepan sunrise" },
+      "private":         { "price": 2500, "label": "Private Guide Full Day Tour", "desc": "All highlights, flexible, deep cave included" },
+      "premium_package": { "price": 4000, "label": "Exclusive Experience + Lake Danum + Crafts", "desc": "All sites + weaving workshop" }
+    },
+    "camiguin": {
+      "group":           { "price": 1200, "label": "Group Island Circuit Tour (tricycle)", "desc": "Sunken Cemetery, White Island, springs" },
+      "semi_private":    { "price": 2000, "label": "Private Tricycle Full Island Tour", "desc": "Your own trike and driver for the day" },
+      "private":         { "price": 3500, "label": "Private Boat + All Highlights", "desc": "White Island sunrise + Mantigue snorkel" },
+      "premium_package": { "price": 6000, "label": "Volcano Trek + All Islands + Diving", "desc": "Mt. Hibok-Hibok + all islands + PADI dive" }
+    },
+    "puerto_galera": {
+      "group":           { "price": 900,  "label": "Group Snorkeling Tour + Island Hop", "desc": "Coral garden, Shark Cave, Canyons" },
+      "semi_private":    { "price": 2800, "label": "PADI Discover Scuba + Snorkel Package", "desc": "Try scuba dive + island hopping" },
+      "private":         { "price": 3200, "label": "Private Banca Island Tour", "desc": "Dedicated boat, flexible stops" },
+      "premium_package": { "price": 12000, "label": "Full PADI Certification Course", "desc": "3-day Open Water PADI certification" }
+    },
+    "calaguas": {
+      "group":           { "price": 600,  "label": "Group Bangka Island Tour", "desc": "Shared boat, snorkeling stops" },
+      "semi_private":    { "price": 1500, "label": "Semi-Private Overnight Package", "desc": "Tent camping, shared boat, meals" },
+      "private":         { "price": 3000, "label": "Private Bangka + Camping Setup", "desc": "Dedicated boat, porter service, campsite" },
+      "premium_package": { "price": 5500, "label": "Glamping Package + Chef Service", "desc": "Glamping tents, private cook, full day boat" }
+    },
+    "cebu_kawasan": {
+      "group":           { "price": 600,  "label": "Habal-habal + Kawasan Falls Day Trip", "desc": "Transport + entrance + canyoneering (basic)" },
+      "semi_private":    { "price": 1500, "label": "Canyoneering Tour (Matutinao to Kawasan)", "desc": "Guide, equipment, ~3hr adventure" },
+      "private":         { "price": 3000, "label": "Private Canyoneering + Whale Shark", "desc": "Canyoneering + Oslob whale shark interaction" },
+      "premium_package": { "price": 5000, "label": "Full Cebu South Package", "desc": "Kawasan + Whale Shark + Pescador Island dive" }
+    },
+    "davao_samal": {
+      "group":           { "price": 800,  "label": "Island Hop + Eagle Center Tour", "desc": "Samal island beaches + Philippine Eagle Center" },
+      "semi_private":    { "price": 2000, "label": "Samal Island Full Day Tour", "desc": "Island beaches, cave, snorkeling" },
+      "private":         { "price": 3500, "label": "Private Island Tour + Eden Nature Park", "desc": "Samal + Davao highland eco-park" },
+      "premium_package": { "price": 6000, "label": "Davao Premium Package", "desc": "Crocodile Park, Eagle Center, Samal, Eden" }
+    },
+    "zamboanga_great_santa_cruz": {
+      "group":           { "price": 700,  "label": "Group Tour to Great Santa Cruz Island", "desc": "Pink sand beach + flamingos" },
+      "semi_private":    { "price": 1500, "label": "Semi-Private Island Day Tour", "desc": "Boat + guide + pink sand walk" },
+      "private":         { "price": 3000, "label": "Private Boat Island Tour", "desc": "Dedicated boat, Malamaui Island combo" },
+      "premium_package": { "price": 5000, "label": "Zamboanga Heritage + Island Package", "desc": "Fort Pilar, Rio Hondo, Great Santa Cruz" }
+    },
+    "bataan_corregidor": {
+      "group":           { "price": 900,  "label": "Group Corregidor Island Day Tour", "desc": "Ferry + island tour + WWII museum" },
+      "semi_private":    { "price": 1800, "label": "Semi-Private Historical Tour", "desc": "Guided Corregidor + Bataan Death March sites" },
+      "private":         { "price": 3500, "label": "Private Corregidor + Bataan Heritage Tour", "desc": "Full-day historical immersion" },
+      "premium_package": { "price": 5500, "label": "VIP Heritage Package", "desc": "Private guide, overnight Corregidor option" }
+    }
+  },
+
+  "local_transport": {
+    "tricycle":       { "price": 150,  "desc": "Tricycle, habal-habal, jeepney — the local way" },
+    "rent_bike":      { "price": 400,  "desc": "Motorbike / e-bike rental for the day (fuel included)" },
+    "grab":           { "price": 600,  "desc": "Grab, metered taxi, tourist shuttles" },
+    "private_driver": { "price": 1500, "desc": "Dedicated driver / van hire for the day" }
+  },
+
+  "shopping_budgets": {
+    "minimal":  { "price": 500,  "desc": "Pasalubong only: dried fish, snacks, small items" },
+    "moderate": { "price": 1500, "desc": "Pasalubong + a few shirts + local crafts" },
+    "heavy":    { "price": 4000, "desc": "Clothes, jewelry, artisan products, bulk pasalubong" }
+  }
+}
