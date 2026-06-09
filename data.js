@@ -1,5 +1,5 @@
 /**
- * data.js — ByaheNa Vacation Cost Estimator
+ * data.js — Lakbay PH Vacation Cost Estimator
  *
  * PRICING DATA (Philippine Pesos, as of 2024–2025)
  *
@@ -241,7 +241,56 @@ const DESTINATIONS = {
       semi_private:  { label: "Surfing Lesson + Island Hop Combo", price: 2000, desc: "1.5-hr beginner surf lesson + half-day island tour" },
       private:       { label: "Private Island Tour + Magpupungko Tidal Pools", price: 3500, desc: "Private boat, all 3 islands + rock pools visit" },
       premium_package: { label: "Surf + Lagoon + Stonefish + Mangrove Day", price: 5500, desc: "Full day with surf guide, mangrove paddle, private island access" }
-    }
+    },
+    entrance_fees: 100,
+    tips: [
+      { icon: "🏄", title: "Surfing at Cloud 9", text: "Cloud 9 is a hollow right-hander, best for intermediate-advanced surfers (Sep–Nov). Beginners should surf at Jacking Horse or Cemetery in General Luna — calmer and perfect for learning." },
+      { icon: "🛵", title: "Rent a Motorbike", text: "The best way to explore Siargao is renting a motorbike (₱400–₱600/day). Roads are flat and easy. A driver-guide costs ₱800–₱1,200/day for those who don't ride." },
+      { icon: "🌊", title: "Magpupungko Rock Pools", text: "Tidal pools that reveal crystal-clear saltwater during low tide. Visit in the morning (low tide 8–11 AM typically). ₱50 entrance, 45 min from General Luna." },
+      { icon: "🥥", title: "Sugba Lagoon", text: "A stunning emerald lagoon 1.5 hrs by boat from General Luna. Entry fee required (₱50). Go early — very crowded by midday." },
+      { icon: "🛖", title: "Stay in General Luna", text: "Most resorts, surf shops, restaurants, and nightlife are in GL. Staying here puts you within walking or tricycle distance of everything." },
+      { icon: "✈️", title: "Getting to Siargao", text: "Direct flights from Manila (Cebu Pacific), Cebu, and Davao to Sayak Airport (IAO). Airport is 30–45 min from GL by van (~₱200–₱350 shared)." }
+    ],
+    packing: {
+      essentials: ["Reef-safe sunscreen", "Motorbike license/permit (international preferred)", "Cash (few ATMs, and often out of money)", "Dry bag", "Reusable bag"],
+      gear: ["Surfboard (resorts have rentals)", "Reef shoes (rocky surf zones)", "Snorkel set", "Waterproof camera"],
+      clothing: ["Rash guard", "Board shorts × 3", "Casual wear for evenings", "Light jacket (rainy mornings common)"],
+      health: ["Antiseptic (reef cuts are common)", "Anti-itch cream (sand flies)", "Electrolytes", "Insect repellent"]
+    },
+    itinerary_template: [
+      {
+        title: "Arrival in Siargao",
+        subtitle: "Land, rent wheels, find your wave",
+        events: [
+          { time: "Morning",   icon: "✈️", name: "Fly to Sayak Airport (IAO)", desc: "Direct flights from Manila, Cebu, and Davao. Van transfer to General Luna (30–45 min, ₱200–350 shared).", cost_key: "transport" },
+          { time: "Midday",    icon: "🛵", name: "Rent a Motorbike", desc: "₱400–600/day from many shops in GL. Explore the main road to Cloud 9 (5 min away) and the coconut palm landscapes.", cost_key: "local" },
+          { time: "3:00 PM",   icon: "🏄", name: "First Surf Session", desc: "Beginners: head to Cemetery beach. Intermediate+: Cloud 9 boardwalk and nearby breaks.", cost_key: "activities" },
+          { time: "6:00 PM",   icon: "🌅", name: "Sunset at Cloud 9 Boardwalk", desc: "The walkway over the water is iconic. Watch surfers and catch the sunset — free and unforgettable." },
+          { time: "7:30 PM",   icon: "🍽️", name: "Dinner in General Luna", desc: "Kermit Resort's restaurant is the most popular (book ahead). Budget options: Harana Surf Resort cafe or local eateries.", cost_key: "food" }
+        ]
+      },
+      {
+        title: "Island Hopping Day",
+        subtitle: "Naked, Daku, and Guyam islands",
+        events: [
+          { time: "8:00 AM",  icon: "🚤", name: "Island Hopping Departs from GL", desc: "Classic 3-island tour: Naked Island (sandbar), Daku Island (lunch under coconut trees), Guyam Island (tiny island paradise).", cost_key: "activities" },
+          { time: "12:00 PM", icon: "🥥", name: "Lunch at Daku Island", desc: "Daku means 'big' — it has vendors selling fresh grilled fish, rice, and cold coconut. Eat under the shade of massive coconut palms." },
+          { time: "3:00 PM",  icon: "🌊", name: "Return & Sugba Lagoon (if time)", desc: "If your tour includes Sugba Lagoon, it's a must — emerald waters, jumping platforms, and kayak rentals." },
+          { time: "5:00 PM",  icon: "🛵", name: "Ride to Pacifico or Burgos", desc: "If staying longer, explore the less-visited north — Pacifico Beach and the Maasin River are less touristy." },
+          { time: "8:00 PM",  icon: "🎶", name: "Night Out in GL", desc: "Siargao has a surprisingly good bar scene: Jungle, Bravo, or low-key beers at Harana.", cost_key: "food" }
+        ]
+      },
+      {
+        title: "Surf & Departure",
+        subtitle: "Last waves, then the road home",
+        events: [
+          { time: "6:00 AM",  icon: "🏄", name: "Dawn Patrol Surf Session", desc: "Last surf before checkout. Early morning is when the waves are glassiest." },
+          { time: "9:00 AM",  icon: "☕", name: "Brunch in GL", desc: "Hang loose at any of the beachside cafes. Siargao has great specialty coffee now.", cost_key: "food" },
+          { time: "10:30 AM", icon: "🛍️", name: "Pasalubong & Checkout", desc: "Siargao shirts, local dried fish, and handmade jewelry from the night market.", cost_key: "shopping" },
+          { time: "12:00 PM", icon: "✈️", name: "Transfer to Sayak Airport", desc: "Book your van transfer at least a day ahead. 30–45 min to the airport.", cost_key: "transport" }
+        ]
+      }
+    ]
   },
 
   bohol: {
@@ -643,7 +692,280 @@ const DESTINATIONS = {
         ]
       }
     ]
+  },
+
+  cebu_kawasan: {
+    name: "Kawasan Falls",
+    province: "Cebu",
+    region: "Central Visayas",
+    tagline: "Tiered turquoise waterfalls and thrilling canyoneering",
+    description: "Kawasan Falls in Badian, Cebu is one of the Philippines' most iconic waterfalls — a multi-tiered turquoise cascade set in a lush jungle. The canyoneering route from Matutinao to Kawasan is one of the most thrilling adventure activities in the country.",
+    type: "nature_adventure",
+    climate_note: "Best Nov–May. Jun–Oct can make canyoneering dangerous due to flash floods.",
+    tier: "mid_friendly",
+    activities: {
+      group:           { label: "Habal-habal + Kawasan Falls Day Trip", price: 600,  desc: "Transport + entrance fee + basic falls visit" },
+      semi_private:    { label: "Canyoneering Tour (Matutinao → Kawasan)", price: 1500, desc: "Guide, safety equipment, ~3hr river adventure, cliff jumps" },
+      private:         { label: "Private Canyoneering + Whale Shark (Oslob)", price: 3000, desc: "Canyoneering + Oslob whale shark interaction + private guide" },
+      premium_package: { label: "Full Cebu South Day Package", price: 5000, desc: "Kawasan + Whale Shark + Pescador Island dive + meals" }
+    },
+    entrance_fees: 50,
+    tips: [
+      { icon: "🏊", title: "Canyoneering Safety First", text: "Only book with DENR-accredited guides. Flash floods can occur with no warning. Check weather in the Badian mountains, not just the coast, before going." },
+      { icon: "🐋", title: "Combine with Whale Sharks", text: "Oslob whale shark watching is 45 min from Kawasan. Most tours combine both in one day: whale sharks at 6–8 AM (before crowds), then canyoneering. ₱1,000–₱1,500 for whale shark interaction." },
+      { icon: "👟", title: "Wear the Right Shoes", text: "No flip-flops for canyoneering. Old rubber shoes or aqua shoes are essential. You'll be wading, jumping off cliffs (10–15m), and scrambling over rocks." },
+      { icon: "🚌", title: "Getting There from Cebu City", text: "Bus from South Bus Terminal to Badian: 2.5–3 hrs (₱80–₱120). Habal-habal from Badian town to the jump-off point. Most tour operators provide transfers from Cebu City for ₱500–₱800." },
+      { icon: "📷", title: "Waterproof Your Gear", text: "Everything gets wet. Waterproof cases for phones are a must. GoPro rentals available from tour operators (₱300–₱500). Dry bag for valuables is essential." },
+      { icon: "🌊", title: "Best Time to Visit the Falls", text: "Early morning (7–9 AM) has the least tourists and best light for photos. The main pool at the base of Kawasan has bamboo rafts for hire (₱150/30 min) — ideal for getting close to the falls." }
+    ],
+    packing: {
+      essentials: ["Old rubber shoes (required)", "Waterproof phone case / dry bag", "Swimwear you can move in", "Change of clothes + towel", "Cash (no ATMs near Badian)"],
+      gear: ["GoPro or waterproof camera", "Extra waterproof bag", "Sunscreen (reef-safe)", "Hair tie (long hair)"],
+      clothing: ["Rash guard (sun + rock scrapes)", "Board shorts or leggings", "Light clothes for after", "Dry footwear for the bus home"],
+      health: ["Energy bars / trail mix", "Electrolyte drinks", "First-aid basics (cuts from rocks)", "Motion sickness (winding mountain road)"]
+    },
+    itinerary_template: [
+      {
+        title: "Journey to Badian",
+        subtitle: "Cebu City → Cebu South → Kawasan",
+        events: [
+          { time: "5:00 AM",  icon: "🌅", name: "Whale Shark Interaction — Oslob (Optional)", desc: "If combining with Oslob: depart Cebu City by 4 AM, arrive Oslob 6 AM. Swim with whale sharks before they disperse. ₱1,500 interaction fee. Book ahead.", cost_key: "activities" },
+          { time: "9:00 AM",  icon: "🚌", name: "Bus to Badian / Kawasan Tour Departs", desc: "South Bus Terminal to Badian: 2.5 hrs. Or join a Cebu City tour that handles transport (~₱800 added to tour price).", cost_key: "transport" },
+          { time: "11:30 AM", icon: "⛑️", name: "Canyoneering Safety Briefing", desc: "Accredited guide equips you with life jacket and helmet. Briefing on cliff jumps, water flow. No experience needed — guides are certified." },
+          { time: "12:00 PM", icon: "🏞️", name: "Canyoneering Route Begins", desc: "3–4 hour route down the Matutinao River. Cliff jumps from 5m, 10m, and 15m. Natural slides, swim-throughs, and emerald pools.", cost_key: "activities" },
+          { time: "3:30 PM",  icon: "💦", name: "Arrive at Kawasan Falls", desc: "The final reward — a stunning triple-tiered turquoise waterfall. Rest, swim, and take photos at the main pool. Bamboo raft available (₱150/30 min)." },
+          { time: "5:00 PM",  icon: "🚌", name: "Return to Cebu City", desc: "Bus or tour van back to Cebu City. ~3 hrs. Most tours include drop-off at Colon or IT Park.", cost_key: "transport" },
+          { time: "8:00 PM",  icon: "🍽️", name: "Dinner in Cebu City", desc: "Lechon at Rico's or Zubuchon, or casual dinner at Larsian BBQ. You've earned a feast.", cost_key: "food" }
+        ]
+      },
+      {
+        title: "Cebu City Explore",
+        subtitle: "Heritage, food, and city sights",
+        events: [
+          { time: "8:00 AM",  icon: "⛪", name: "Magellan's Cross & Basilica Minore", desc: "The most important heritage site in Cebu — the cross planted by Magellan in 1521. Free, 5-min walk between sites." },
+          { time: "9:30 AM",  icon: "🏰", name: "Fort San Pedro", desc: "Spanish colonial fort and gardens. ₱30 entrance. Short but charming." },
+          { time: "11:00 AM", icon: "🛒", name: "Carbon Market", desc: "Cebu's biggest public market — vibrant, authentic, full of dried fish, local fruits, and pasalubong.", cost_key: "shopping" },
+          { time: "1:00 PM",  icon: "🐷", name: "Lechon Lunch", desc: "Head to Rico's Lechon (Ayala branch) or La Tegola for the iconic Cebu lechon. Budget ₱500–₱800 for a proper feast.", cost_key: "food" },
+          { time: "3:00 PM",  icon: "🏖️", name: "Mactan Island Beach Afternoon", desc: "Short drive to Mactan for beach time. Maribago Beach or Tambuli Beach (day use rates available).", cost_key: "activities" },
+          { time: "7:00 PM",  icon: "🌃", name: "Dinner at IT Park or Ayala", desc: "Cebu's food scene is excellent. Night market along Larsian for BBQ, or restaurants at Ayala Center Cebu.", cost_key: "food" }
+        ]
+      },
+      {
+        title: "Departure Day",
+        subtitle: "Last tastes of Cebu before heading home",
+        events: [
+          { time: "8:00 AM",  icon: "☕", name: "Breakfast: Goto or Puso", desc: "Try puso (hanging rice) with garlic danggit at Sutukil in Carbon or a local turo-turo." },
+          { time: "9:30 AM",  icon: "🛍️", name: "Pasalubong at Taboan Market", desc: "The best dried fish, otap, rosquillos, danggit, and tablea in Cebu. Vacuum-packed options available for flying.", cost_key: "shopping" },
+          { time: "11:00 AM", icon: "✈️", name: "Depart from Mactan-Cebu International Airport", desc: "30–45 min from the city. Final farewell to Cebu!", cost_key: "transport" }
+        ]
+      }
+    ]
+  },
+
+  davao_samal: {
+    name: "Samal Island",
+    province: "Davao del Norte",
+    region: "Davao Region",
+    tagline: "Pristine beaches, caves, and the world's largest bat colony",
+    description: "The Island Garden City of Samal (IGACOS) sits just 5 minutes by ferry from Davao City. Known for its white sand beaches, pristine coral reefs, mysterious caves, and the massive Monfort Bat Sanctuary — home to 1.8 million fruit bats.",
+    type: "island_accessible",
+    climate_note: "Best Nov–May. Relatively typhoon-free due to Davao's geography. Year-round accessible.",
+    tier: "mid_friendly",
+    activities: {
+      group:           { label: "Island Hop + Eagle Center Tour (Group)", price: 800,  desc: "Samal beaches + Philippine Eagle Center (Davao mainland)" },
+      semi_private:    { label: "Samal Island Full-Day Tour", price: 2000, desc: "White Beach, Hagimit Falls, Bat Sanctuary, snorkeling" },
+      private:         { label: "Private Island Tour + Eden Nature Park", price: 3500, desc: "Samal + Davao highland eco-park with private guide" },
+      premium_package: { label: "Davao Premium Multi-Day Package", price: 6000, desc: "Crocodile Park, Eagle Center, Samal, Eden Nature Park" }
+    },
+    entrance_fees: 100,
+    tips: [
+      { icon: "🦇", title: "Monfort Bat Sanctuary", text: "Guinness World Record holder for the world's largest colony of Geoffroy's rousette fruit bats — 1.8 million bats. Watching them emerge at dusk is surreal. ₱80 entrance, guided tour mandatory." },
+      { icon: "🦅", title: "Philippine Eagle Center", text: "On the Davao mainland (not Samal), the Philippine Eagle Center rehabilitates and breeds the national bird. 30-min drive from Davao City. ₱50 entrance. Must-visit." },
+      { icon: "⛴️", title: "The Ferry is Cheap", text: "The Sasa-Samal ferry runs 24/7 and costs only ₱15–₱20 per person one way. It's one of the cheapest ferry rides in the Philippines. Journey time: 5 minutes." },
+      { icon: "🏖️", title: "Best Beaches on Samal", text: "Paradise Island Beach (₱150 entrance, popular), Dakak Beach (premium resort), Kaputian Beach (quieter, local favorite), and Talikud Island (30-min boat from Samal)." },
+      { icon: "🍌", title: "Davao Fruits", text: "Davao is the fruit basket of the Philippines. Try fresh durian (seriously — taste it), pomelo, mangosteen, and marang. The Aldevinco Shopping Center has the best dried fruit selection." },
+      { icon: "🔒", title: "Safety in Davao", text: "Davao City has strict local ordinances (no smoking in public, no firecrackers, liquor ban after midnight). The city is considered among the safest in Mindanao. Follow local rules." }
+    ],
+    packing: {
+      essentials: ["Swimwear", "Cash (Samal has limited ATMs)", "Insect repellent (bats attract insects at dusk)", "Reef-safe sunscreen", "Dry bag"],
+      gear: ["Snorkeling set (Samal reefs are excellent)", "Waterproof sandals", "Camera for the bat colony", "GoPro for underwater"],
+      clothing: ["Light beach clothes", "Long sleeves for bat sanctuary (insects)", "Change of dry clothes", "Light jacket for Eden Nature Park altitude"],
+      health: ["Motion sickness meds (some ferries can be rough)", "First-aid basics", "Electrolytes for hot weather hikes", "Sunscreen SPF 50+"]
+    },
+    itinerary_template: [
+      {
+        title: "Arrive Davao, Head to Samal",
+        subtitle: "5-minute ferry to island paradise",
+        events: [
+          { time: "Morning",  icon: "✈️", name: "Fly to Francisco Bangoy International Airport (DVO)", desc: "Direct flights from Manila, Cebu, and other major cities. 30–45 min transfer to Sasa port.", cost_key: "transport" },
+          { time: "Midday",   icon: "⛴️", name: "Ferry to Samal Island", desc: "5-min ferry from Sasa port, Davao City to Santa Cruz, Samal. Ferries run every 30 min. Only ₱20/person." },
+          { time: "1:00 PM",  icon: "🏨", name: "Check In & Lunch", desc: "Resort check-in. Budget: cottages near the port. Mid: Blue Paradise or Chema's. Premium: Bluejaz Resort or Maxima Aqua Hotel.", cost_key: "food" },
+          { time: "3:00 PM",  icon: "🏖️", name: "Afternoon at Paradise Island Beach", desc: "Most popular beach on Samal. Powdery white sand, calm shallow water. Day use ₱150. Snorkeling gear for hire.", cost_key: "activities" },
+          { time: "5:00 PM",  icon: "🦇", name: "Monfort Bat Sanctuary at Dusk", desc: "Watch 1.8 million bats emerge in a dramatic spiral at sunset — one of the most spectacular natural events in the Philippines. ₱80 entrance + guide.", cost_key: "activities" },
+          { time: "7:30 PM",  icon: "🍽️", name: "Seafood Dinner at Kaputian", desc: "Grilled squid, curacha (spanner crab), and kinilaw. Local restaurants near Kaputian Beach are excellent and affordable.", cost_key: "food" }
+        ]
+      },
+      {
+        title: "Samal Exploration Day",
+        subtitle: "Beaches, falls, and caves",
+        events: [
+          { time: "7:00 AM",  icon: "🌅", name: "Sunrise Swim at Kaputian Beach", desc: "Kaputian is quieter and more local than Paradise Island. Great for early morning swims." },
+          { time: "9:00 AM",  icon: "💦", name: "Hagimit Falls", desc: "7 tiers of waterfalls in a forested park on Samal. ₱30 entrance. Swim in the natural pools. 30-min tricycle from port.", cost_key: "activities" },
+          { time: "11:00 AM", icon: "🦈", name: "Coral Reef Snorkeling", desc: "Samal's reefs are among the best in Mindanao — diverse fish, hard and soft corals, and sea turtles sometimes spotted. Rent snorkel set at your resort.", cost_key: "activities" },
+          { time: "1:00 PM",  icon: "🍛", name: "Lunch: Boodle Fight Style", desc: "Many Samal restaurants offer boodle fight feasts (eat with your hands from a banana leaf spread). 2–4 pax can share one.", cost_key: "food" },
+          { time: "3:00 PM",  icon: "🏝️", name: "Talikud Island (Optional)", desc: "30-min boat from Samal's Kaputian port. Smaller, wilder, with excellent snorkeling around Coral Garden. ₱500 boat + ₱100 entrance.", cost_key: "activities" },
+          { time: "6:00 PM",  icon: "🌇", name: "Sunset View from Samal Shores", desc: "Watch the sun set over Davao Gulf with Mt. Apo in the background. Free and stunning." }
+        ]
+      },
+      {
+        title: "Davao City Day + Departure",
+        subtitle: "Eagles, fruits, and the mainland",
+        events: [
+          { time: "7:00 AM",  icon: "⛴️", name: "Ferry Back to Davao", desc: "Early ferry to make time for Davao City sights before your flight." },
+          { time: "8:30 AM",  icon: "🦅", name: "Philippine Eagle Center", desc: "20-min drive from Sasa port. See the critically endangered Philippine Eagle up close. ₱50 entrance. Allow 1.5 hrs.", cost_key: "activities" },
+          { time: "10:30 AM", icon: "🌿", name: "Davao Crocodile Park (Optional)", desc: "Research and conservation facility with crocs, snakes, and indigenous wildlife. ₱250 entrance. Educational and surprisingly fun.", cost_key: "activities" },
+          { time: "12:30 PM", icon: "🍑", name: "Lunch + Durian Tasting at Magsaysay Park", desc: "The ultimate Davao experience: fresh durian from the night market vendors (even during the day). Also try pomelo, marang, and snake fruit.", cost_key: "food" },
+          { time: "2:30 PM",  icon: "🛍️", name: "Pasalubong: Dried Fruits & Durian Products", desc: "Aldevinco Shopping Center for the best dried mango, durian candy, tablea, and local crafts.", cost_key: "shopping" },
+          { time: "4:00 PM",  icon: "✈️", name: "Depart from Davao Airport", desc: "Allow 45–60 min transfer from city center to DVO airport.", cost_key: "transport" }
+        ]
+      }
+    ]
+  },
+
+  zamboanga_great_santa_cruz: {
+    name: "Great Santa Cruz Island",
+    province: "Zamboanga del Sur",
+    region: "Zamboanga Peninsula",
+    tagline: "Pink sand beaches and rare flamingos",
+    description: "One of only a few pink sand beaches in the world, Great Santa Cruz Island gets its blush color from crushed red coral fragments mixed with white sand. The island is also home to a rare colony of greater flamingos and is a protected marine sanctuary.",
+    type: "island_unique",
+    climate_note: "Best Nov–May. Check local advisories before visiting — the Zamboanga area has had periodic travel advisories. Consult your LGU and the local tourism office.",
+    tier: "mid_friendly",
+    activities: {
+      group:           { label: "Group Tour to Great Santa Cruz Island", price: 700,  desc: "Boat + pink sand beach + flamingo viewing" },
+      semi_private:    { label: "Semi-Private Island Day Tour", price: 1500, desc: "Boat + guide + pink sand walk + Paseo del Mar" },
+      private:         { label: "Private Boat Island Tour", price: 3000, desc: "Dedicated boat, Malamaui Island combo, flexible" },
+      premium_package: { label: "Zamboanga Heritage + Island Package", price: 5000, desc: "Fort Pilar, Rio Hondo Village, Great Santa Cruz Island" }
+    },
+    entrance_fees: 150,
+    tips: [
+      { icon: "🦩", title: "The Pink Sand & Flamingos", text: "The pink sand is most vivid in the morning light. The flamingo colony (Greater Flamingos) can be seen from designated viewing platforms. They're wild and free — sightings aren't guaranteed but are common." },
+      { icon: "⚠️", title: "Check Travel Advisories First", text: "Zamboanga City has had historical security concerns in some areas. Check the Department of Tourism and your government's foreign affairs travel advisory before visiting. The city itself and the island tourism zones have been peaceful for many years." },
+      { icon: "🕌", title: "Rio Hondo Village", text: "A fascinating coastal Muslim village built entirely on stilts over the sea. One of the most unique communities in the Philippines. Respectful visits with a guide are welcome." },
+      { icon: "🌸", title: "Zamboanga: 'City of Flowers'", text: "Zamboanga is known as the 'City of Flowers' and has a distinctive culture blending Malay, Spanish, and Filipino influences. The local language Chavacano is a Spanish-based creole — unique in all of Asia." },
+      { icon: "✈️", title: "Getting to Zamboanga", text: "Direct flights from Manila and Cebu to Zamboanga International Airport (ZAM). The island is a 15-minute boat ride from the pier near the city center." },
+      { icon: "🦀", title: "Seafood in Zamboanga", text: "Zamboanga has fantastic seafood, especially curacha (spanner crab). Try it at Alavar's Restaurant — a Zamboanga institution — or at the waterfront market near the pier." }
+    ],
+    packing: {
+      essentials: ["Valid government ID (sometimes checked)", "Cash (limited ATM options on the island)", "Reef-safe sunscreen", "Modest cover-up (respect local culture)"],
+      gear: ["Camera with zoom lens (flamingos)", "Snorkel set", "Waterproof bag", "Binoculars for birding"],
+      clothing: ["Light breathable clothes", "Swimwear", "Long sleeves/scarf (respect Muslim culture in town)", "Sun hat"],
+      health: ["Insect repellent", "Sunscreen SPF 50+", "Motion sickness (boat)", "First aid basics"]
+    },
+    itinerary_template: [
+      {
+        title: "Arrive Zamboanga & City Tour",
+        subtitle: "Flowers, forts, and stilt villages",
+        events: [
+          { time: "Morning",  icon: "✈️", name: "Fly to Zamboanga International Airport (ZAM)", desc: "Direct flights from Manila (~1.5 hrs) and Cebu. Transfer to city hotel by taxi or Grab.", cost_key: "transport" },
+          { time: "Midday",   icon: "🏰", name: "Fort Pilar National Shrine", desc: "17th-century Spanish colonial fort and marine wildlife sanctuary. Free to enter the grounds. The patron saint of Zamboanga is enshrined here." },
+          { time: "2:00 PM",  icon: "🕌", name: "Rio Hondo Stilt Village Tour", desc: "Guided walk through one of Mindanao's most atmospheric coastal communities. Go with a local guide for safety and cultural context.", cost_key: "activities" },
+          { time: "4:00 PM",  icon: "🌳", name: "Paseo del Mar", desc: "Zamboanga's baywalk — a beautiful promenade facing the sea and Santa Cruz islands. Relaxing sunset spot." },
+          { time: "7:00 PM",  icon: "🦀", name: "Dinner at Alavar's Restaurant", desc: "Iconic Zamboanga institution. Try their famous curacha with 'Alavar sauce' — a signature coconut-based seafood sauce that locals swear by.", cost_key: "food" }
+        ]
+      },
+      {
+        title: "Great Santa Cruz Island Day",
+        subtitle: "The pink beach awaits",
+        events: [
+          { time: "7:00 AM",  icon: "🚤", name: "Boat to Great Santa Cruz Island", desc: "15-min boat from Zamboanga pier. Register at the Bantay Dagat office first. Permits required. ₱150 environmental fee.", cost_key: "activities" },
+          { time: "7:30 AM",  icon: "🌸", name: "Walk the Pink Sand Beach", desc: "Morning light brings out the best of the rosy hue. Walk barefoot on the unique coral-sand blend. Photography permitted." },
+          { time: "9:00 AM",  icon: "🦩", name: "Flamingo Viewing Platform", desc: "Greater Flamingos have colonized part of the island. Walk to the designated viewing area — bring binoculars for the best view." },
+          { time: "10:00 AM", icon: "🤿", name: "Snorkeling at the Marine Sanctuary", desc: "The reef surrounding Santa Cruz is a protected marine reserve. Diverse corals, fish schools, and clear visibility.", cost_key: "activities" },
+          { time: "12:30 PM", icon: "🍱", name: "Picnic Lunch on the Island", desc: "Bring packed lunch from the city — no restaurants on the island. Local operators sometimes arrange food.", cost_key: "food" },
+          { time: "3:00 PM",  icon: "⛵", name: "Return to Zamboanga", desc: "Boat back to the mainland. Time for an afternoon rest or last city exploration." }
+        ]
+      },
+      {
+        title: "Little Santa Cruz & Departure",
+        subtitle: "The smaller sibling island, then homeward",
+        events: [
+          { time: "7:30 AM",  icon: "🚤", name: "Little Santa Cruz Island (Optional)", desc: "The smaller, less-visited counterpart island with its own patch of pinkish sand and quiet reef. Fewer tourists, equally beautiful.", cost_key: "activities" },
+          { time: "10:00 AM", icon: "🛒", name: "Zamboanga Market Pasalubong", desc: "Malong fabrics, vinta boat crafts, dried seafood, and local delicacies. The Barter Trade area near the pier is colorful and unique.", cost_key: "shopping" },
+          { time: "12:00 PM", icon: "🍽️", name: "Last Lunch: Satti (Zamboanga Satay)", desc: "Satti is Zamboanga's version of satay — grilled meat on bamboo skewers with spiced broth. Try it at Eden's or the market.", cost_key: "food" },
+          { time: "2:00 PM",  icon: "✈️", name: "Depart from Zamboanga Airport", desc: "30-min transfer to ZAM airport. Allow extra time during busy periods.", cost_key: "transport" }
+        ]
+      }
+    ]
+  },
+
+  bataan_corregidor: {
+    name: "Corregidor Island",
+    province: "Bataan / Manila Bay",
+    region: "Central Luzon / NCR",
+    tagline: "WWII fortress island in the mouth of Manila Bay",
+    description: "Corregidor Island stands at the entrance of Manila Bay and is one of the most historically significant sites in Southeast Asia. Once the last stronghold against Japanese invasion in WWII, its ruins, tunnels, memorials, and wildlife now attract history lovers and day-trippers alike.",
+    type: "cultural_historical",
+    climate_note: "Best Nov–May. Year-round accessible but typhoon season (Jun–Oct) can cancel ferries.",
+    tier: "mid_friendly",
+    activities: {
+      group:           { label: "Group Corregidor Day Tour (Sun Cruises)", price: 900,  desc: "Ferry + island tram tour + WWII museum + light-and-sound show" },
+      semi_private:    { label: "Historical Small Group Tour", price: 1800, desc: "Guided Corregidor + Bataan Death March memorial sites" },
+      private:         { label: "Private Corregidor + Bataan Heritage Tour", price: 3500, desc: "Full-day private historical immersion, custom itinerary" },
+      premium_package: { label: "Overnight Corregidor Island Package", price: 5500, desc: "Overnight stay at Corregidor Inn + all tours + sunset dinner" }
+    },
+    entrance_fees: 200,
+    tips: [
+      { icon: "🚢", title: "Book Sun Cruises in Advance", text: "Sun Cruises is the official tour operator to Corregidor. Day tours depart from CCP Complex, Manila at 7:30 AM. Book at least a week ahead during peak season (Dec–Apr). The all-inclusive package (₱2,200–₱2,800) covers ferry, tram, and guide." },
+      { icon: "⚔️", title: "What to Expect", text: "Corregidor has an electric tram tour of the ruins, Malinta Tunnel (the famous underground hospital/command center), the Pacific War Memorial, and the Japanese Garden of Peace. Allow a full day." },
+      { icon: "🦅", title: "Malinta Tunnel Light & Sound Show", text: "A theatrical reenactment of the Battle of Corregidor is staged inside Malinta Tunnel. Surprisingly moving and historically educational. Included in most tour packages." },
+      { icon: "🦎", title: "Wildlife on Corregidor", text: "The island's abandoned areas have been reclaimed by nature. Monitor lizards (bayawak) are commonly seen near the ruins. Birds of prey nest in the old barracks." },
+      { icon: "🌙", title: "Overnight Stay", text: "Corregidor has the Corregidor Inn (the old army officers' quarters). Staying overnight gives you the island to yourself after day-trippers leave — and the sunrise over Manila Bay is extraordinary." },
+      { icon: "🏛️", title: "Combine with Bataan", text: "The Bataan Death March route is on the mainland — the Bataan Cross (Mt. Samat Shrine) is a 45-min drive from the Bataan port town of Mariveles. Combine Corregidor + Bataan in 2 days for the full WWII experience." }
+    ],
+    packing: {
+      essentials: ["Government ID (sometimes required for ferry boarding)", "Comfortable walking shoes (a LOT of walking)", "Water and snacks (limited food on island)", "Cash", "Sun hat and sunscreen"],
+      gear: ["Camera — the ruins are very photogenic", "Binoculars (birds and Manila Bay views)", "Flashlight (for Malinta Tunnel)", "Offline maps of the island"],
+      clothing: ["Light breathable clothes", "Long pants optional (some tunnel areas are cool)", "Rain jacket (weather changes quickly at sea)", "Extra layer for the ferry (windy)"],
+      health: ["Motion sickness meds (Manila Bay crossing can be rough)", "Insect repellent", "Extra water — it gets hot on the island", "SPF 50 sunscreen"]
+    },
+    itinerary_template: [
+      {
+        title: "Ferry to Corregidor",
+        subtitle: "Cross Manila Bay to the Rock",
+        events: [
+          { time: "5:30 AM",  icon: "🚗", name: "Depart for CCP Complex, Manila", desc: "Sun Cruises departs from CCP/Harbour Square. Arrive by 7 AM for check-in. Tricycle or Grab from nearby areas.", cost_key: "transport" },
+          { time: "7:30 AM",  icon: "🚢", name: "Ferry Departs for Corregidor", desc: "2-hour ferry crossing across Manila Bay. Views of the bay, Cavite coastline, and the Corregidor lighthouse as you approach.", cost_key: "activities" },
+          { time: "9:30 AM",  icon: "🏛️", name: "Arrive + Tram Tour Begins", desc: "Electric tram takes you through the ruins: Pacific War Memorial, Battery Hearn, Miles Long Barracks (longest building in the world at the time), Japanese Garden of Peace." },
+          { time: "11:00 AM", icon: "⚔️", name: "Malinta Tunnel", desc: "Walk through the famous tunnel complex where General MacArthur planned the Pacific campaign. Light and sound show runs inside (included in tours).", cost_key: "activities" },
+          { time: "12:30 PM", icon: "🍽️", name: "Lunch at Corregidor", desc: "The tour typically includes a buffet lunch at the island's dining facility. Quality is decent — local Filipino food.", cost_key: "food" },
+          { time: "2:00 PM",  icon: "🦎", name: "Battery Grubbs & Sunset Overlook", desc: "Explore the outer batteries and gun emplacements overlooking the sea. Monitor lizards are often spotted near the ruins." }
+        ]
+      },
+      {
+        title: "Return & Bataan (Optional Day 2)",
+        subtitle: "The Death March route and Mt. Samat",
+        events: [
+          { time: "4:00 PM",  icon: "🚢", name: "Ferry Return to Manila", desc: "2-hour return crossing. Arrive CCP Complex around 6 PM." },
+          { time: "6:30 PM",  icon: "🌆", name: "Arrive Manila", desc: "End of Corregidor day tour. If staying overnight, this is Day 2 morning instead.", cost_key: "transport" },
+          { time: "8:00 AM",  icon: "🚌", name: "(Day 2 Option) Bus to Balanga, Bataan", desc: "Buses from Cubao to Balanga: 3 hrs. The Bataan Death March historic route runs along the national road.", cost_key: "transport" },
+          { time: "11:00 AM", icon: "✝️", name: "Mt. Samat National Shrine (Dambana)", desc: "Massive cross memorial atop Mt. Samat (555m). Shrine of Valor honors Filipino and American soldiers. Panoramic views of Bataan and Manila Bay. ₱30 entrance.", cost_key: "activities" },
+          { time: "1:00 PM",  icon: "🍽️", name: "Lunch in Balanga City", desc: "Balanga has good local eateries. Try sinigang or fresh catch at any of the restaurants near the city plaza.", cost_key: "food" },
+          { time: "3:00 PM",  icon: "🛍️", name: "Pasalubong: Bataan Products", desc: "Look for Bataan peanut butter (famous), local wines, and crafts at the Balanga public market.", cost_key: "shopping" }
+        ]
+      },
+      {
+        title: "Return to Origin",
+        subtitle: "History absorbed, homeward bound",
+        events: [
+          { time: "Morning",  icon: "🌅", name: "Final Morning in Bataan / Manila", desc: "If you did the 2-day Corregidor + Bataan combination, spend the morning relaxing or revisiting any sites." },
+          { time: "10:00 AM", icon: "🚌", name: "Bus Back to Manila / Origin", desc: "Buses from Balanga to Cubao (Manila): ~3 hrs. Then connect to your home city.", cost_key: "transport" },
+          { time: "Afternoon",icon: "🏠", name: "Arrive Home", desc: "End of a deeply moving and historically significant Philippine trip." }
+        ]
+      }
+    ]
   }
+
 };
 
 // ============================================================
@@ -943,14 +1265,14 @@ function getHotelRate(destKey, hotelTypeKey) {
 // ============================================================
 function calculateEstimate(params) {
   const {
-    originKey, destKey, travelers, nights, days,
+    originKey, destKey, travelers, nights,
     transportMode, hotelType, foodType, activityType,
     localType, shoppingType, contingencyPct,
     transportEnabled, hotelEnabled, foodEnabled,
     activitiesEnabled, localEnabled, shoppingEnabled, contingencyEnabled
   } = params;
 
-  const safeDays = Math.max((typeof days === "number" ? days : nights + 1), nights + 1);
+  const days = nights + 1;
   const dest = DESTINATIONS[destKey];
   if (!dest) return null;
 
@@ -971,12 +1293,12 @@ function calculateEstimate(params) {
 
   // Food (per person per day × days)
   const foodData = FOOD_BUDGETS[foodType] || FOOD_BUDGETS.casual;
-  const foodTotal = foodEnabled ? foodData.price * safeDays : 0;
+  const foodTotal = foodEnabled ? foodData.price * days : 0;
   results.food = foodTotal;
 
   // Activities
   const actData = dest.activities[activityType] || dest.activities.group;
-  const entranceFees = dest.entrance_fees * safeDays * 0.5; // partial days
+  const entranceFees = dest.entrance_fees * days * 0.5; // partial days
   const activitiesTotal = activitiesEnabled
     ? (actData.price + entranceFees)
     : 0;
@@ -984,7 +1306,7 @@ function calculateEstimate(params) {
 
   // Local transport (per person per day)
   const localData = LOCAL_TRANSPORT[localType] || LOCAL_TRANSPORT.tricycle;
-  const localTotal = localEnabled ? localData.price * safeDays : 0;
+  const localTotal = localEnabled ? localData.price * days : 0;
   results.local = localTotal;
 
   // Shopping
@@ -1002,10 +1324,9 @@ function calculateEstimate(params) {
 
   const totalPerPerson = subtotal + contingency;
   const grandTotal = totalPerPerson * travelers;
-  const perDay = totalPerPerson / safeDays;
+  const perDay = totalPerPerson / days;
 
   return {
-    days: safeDays,
     items: results,
     subtotal,
     contingency,
@@ -1014,6 +1335,7 @@ function calculateEstimate(params) {
     perDay,
     travelers,
     nights,
+    days,
     destination: dest,
     transportNote: getTransportNote(originKey, destKey)
   };
@@ -1022,9 +1344,9 @@ function calculateEstimate(params) {
 // ============================================================
 // HELPER: Calculate tier total (for range display & comparison)
 // ============================================================
-function calculateTierTotal(tierKey, originKey, destKey, nights, days, travelers) {
+function calculateTierTotal(tierKey, originKey, destKey, nights, travelers) {
   const preset = TIER_PRESETS[tierKey];
-  const safeDays = Math.max((typeof days === "number" ? days : nights + 1), nights + 1);
+  const days = nights + 1;
   const dest = DESTINATIONS[destKey];
   if (!dest) return 0;
 
@@ -1045,9 +1367,9 @@ function calculateTierTotal(tierKey, originKey, destKey, nights, days, travelers
   const transport = getTransportCost(originKey, destKey, transportMode);
   const hotelData = getHotelRate(destKey, preset.hotel);
   const hotelPerPerson = (hotelData.price / 2) * nights;
-  const food = (FOOD_BUDGETS[preset.food]?.price || 700) * safeDays;
+  const food = (FOOD_BUDGETS[preset.food]?.price || 700) * days;
   const activity = (dest.activities[preset.activity]?.price || 1000) + dest.entrance_fees;
-  const local = (LOCAL_TRANSPORT[preset.local]?.price || 200) * safeDays;
+  const local = (LOCAL_TRANSPORT[preset.local]?.price || 200) * days;
   const shopping = SHOPPING_BUDGETS[preset.shopping]?.price || 500;
   const subtotal = transport + hotelPerPerson + food + activity + local + shopping;
   const contingency = subtotal * (preset.contingency || 0.1);
